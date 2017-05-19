@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.ws.rs.core.Response;
 
+import junit.framework.Assert;
+
 import org.guanpu.vo.Credential;
 import org.junit.After;
 import org.junit.Before;
@@ -48,6 +50,12 @@ public class AzureCredentialTest {
 	@Test
 	public void testTokenType() throws JsonProcessingException, IOException {
 		assertEquals("Bearer", credentialVO.getTokenType());
+		assertNotNull(credentialVO.getExpiresIn());
+		assertNotNull(credentialVO.getExtExpiresIn());
+		assertNotNull(credentialVO.getExpiresOn());
+		assertNotNull(credentialVO.getNotBefore());
+		assertNotNull(credentialVO.getResource());
+		assertNotNull(credentialVO.getAccessToken());
 	}
 
 }
