@@ -13,26 +13,32 @@ public class AzureCredential {
 	 *  client_id : <appId>
 	 *  client_secret : <key>
 	 */
-	AzureCredential(Builder builder) {
 
+	private final String ROOT_URL = "https://login.microsoftonline.com/";
+	
+	private final String OAUTH2_PATH = "OAuth2/Token";
+	
+	private final String API_VERSION = "api-version=1.0";
+	
+	private final String POST_GRANT_TYPE = "client_credentials";
+	
+	private final String POST_RESOURCE = "https://management.core.windows.net/";
+	
+	private final String tenant;
+	private final String clientId;
+	private final String clientSecret;
+	
+	private AzureCredential(Builder builder) {
+		this.tenant = builder.tenant;
+		this.clientId = builder.clientId;
+		this.clientSecret = builder.clientSecret;
 	}
-
-	private static final String ROOT_URL = "https://login.microsoftonline.com/";
-	
-	private static final String OAUTH2_PATH = "OAuth2/Token";
-	
-	private static final String API_VERSION = "api-version=1.0";
-	
-	private static final String POST_GRANT_TYPE = "client_credentials";
-	
-	private static final String POST_RESOURCE = "https://management.core.windows.net/";
-	
 	
 	public static final class Builder {
 		
-		String tenant;
-		String clientId;
-		String clientSecret;
+		private String tenant;
+		private String clientId;
+		private String clientSecret;
 		
 		public AzureCredential build(){
 			return new AzureCredential(this);
