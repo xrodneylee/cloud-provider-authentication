@@ -34,6 +34,7 @@ public class AzureCredential {
 		this.clientSecret = builder.clientSecret;
 	}
 	
+	
 	public static final class Builder {
 		
 		private String tenant;
