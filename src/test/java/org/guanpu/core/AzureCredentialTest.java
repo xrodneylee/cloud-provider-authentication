@@ -6,8 +6,6 @@ import java.io.IOException;
 
 import javax.ws.rs.core.Response;
 
-import junit.framework.Assert;
-
 import org.guanpu.vo.Credential;
 import org.junit.After;
 import org.junit.Before;
