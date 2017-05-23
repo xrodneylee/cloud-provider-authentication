@@ -9,6 +9,8 @@ import javax.ws.rs.core.Form;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.google.common.base.Preconditions;
+
 public class AzureCredential {
 
 	/**
@@ -61,6 +63,9 @@ public class AzureCredential {
 		private String clientSecret;
 		
 		public AzureCredential build(){
+			Preconditions.checkNotNull(tenant, "tenant can't be null");
+			Preconditions.checkNotNull(clientId, "clientId can't be null");
+			Preconditions.checkNotNull(clientSecret, "clientSecret can't be null");
 			return new AzureCredential(this);
 		}
 		
