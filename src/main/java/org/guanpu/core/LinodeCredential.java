@@ -48,6 +48,7 @@ public class LinodeCredential {
 			this.username = username;
 			return this;
 		}
+		
 		public Builder setPassword(String password) {
 			this.password = password;
 			return this;
