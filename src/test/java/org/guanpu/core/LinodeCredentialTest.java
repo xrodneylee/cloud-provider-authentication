@@ -47,7 +47,7 @@ public class LinodeCredentialTest {
 	}
 	
 	@Test
-	public void testApiKey() throws Exception {
+	public void testApiKey() {
 		assertNotNull(root.at("/DATA/API_KEY").asText());
 	}
 
