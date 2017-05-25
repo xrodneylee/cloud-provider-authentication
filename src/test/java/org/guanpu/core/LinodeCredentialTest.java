@@ -13,18 +13,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class LinodeCredentialTest {
 	
-	LinodeCredential linodeCredential;
+	LinodeCredential credential;
 	Response resposne;
 	JsonNode root;
 	
 	@Before
 	public void setUp() throws Exception {
-		linodeCredential = new LinodeCredential.Builder()
+		credential = new LinodeCredential.Builder()
 				.setUsername("username")
 				.setPassword("password")
 				.build();
 		
-		resposne = linodeCredential.invoke();
+		resposne = credential.invoke();
 		root = new ObjectMapper().readTree(resposne.readEntity(String.class));
 	}
 
