@@ -46,7 +46,7 @@ public class AzureCredentialTest {
 	}
 	
 	@Test
-	public void testTokenType() throws JsonProcessingException, IOException {
+	public void testCredential() throws JsonProcessingException, IOException {
 		assertEquals("Bearer", credentialVO.getTokenType());
 		assertNotNull(credentialVO.getExpiresIn());
 		assertNotNull(credentialVO.getExtExpiresIn());
