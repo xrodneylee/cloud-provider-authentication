@@ -15,9 +15,9 @@ response = credential.invoke();
 ### Linode
 ```
 linodeCredential = new LinodeCredential.Builder()
-				.setUsername("username")
-				.setPassword("password")
-				.build();
+            .setUsername("username")
+            .setPassword("password")
+            .build();
 		
 resposne = linodeCredential.invoke();
 ```
